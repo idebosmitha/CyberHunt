@@ -55,7 +55,7 @@ ROOT_URLCONF = 'cyberhunt.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['cyberhunt/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
