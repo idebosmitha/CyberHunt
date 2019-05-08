@@ -1,0 +1,28 @@
+{% load staticfiles %}
+
+<!-- <nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">{{ teamname }} ({{ score }})</a>
+    <div style="float: right">
+        <a href="/leaderboards" target="_blank">Leaderboards</a>&nbsp;
+        <a href="/logout">Logout</a>
+    </div>
+</nav> -->
+<link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+
+<!-- Sidebar -->
+<div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">{{ teamname }} ({{ score }}) </div>
+    <div class="list-group list-group-flush">
+        {% for question in all_questions %}
+        <a 
+            href="{% url 'question' {{ question.id }}" 
+            class="list-group-item list-group-item-action bg-light">
+            {{ question.name }}
+
+            <div style="float: right;">{{ question.points }}</div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+<!-- /#sidebar-wrapper -->

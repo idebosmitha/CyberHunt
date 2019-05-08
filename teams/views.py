@@ -18,9 +18,9 @@ def login(request):
             try:
                 team = Team.objects.get(teamname=teamname, password=password)
                 request.session['team_id'] = team.id
-                return HttpResponse(f'{team.id}')
+                return redirect('/question/1')
             except:
-                pass
+                return render(request, 'teams/login.html', {'error': 'Invalid credentials'})
         else:
             return render(request, 'teams/login.html', {'error': 'All fields are required'})
 
@@ -65,3 +65,7 @@ def register(request):
             return redirect('login')
         else:
             return render(request, 'teams/register.html', {'error': 'All fields are required'})
+
+
+def logout(request):
+    pass
