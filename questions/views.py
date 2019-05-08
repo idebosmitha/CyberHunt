@@ -30,3 +30,7 @@ def question(request, question_id):
         'teamname': team.teamname,
         'score': score,
     })
+
+
+def leaderboards(request):
+    pass
