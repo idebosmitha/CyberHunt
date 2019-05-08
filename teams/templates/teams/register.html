@@ -1,15 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register</title>
-</head>
+{% block title %}
+Register
+{% endblock %}
 
-<body>
-    Register
-</body>
+{% block content %}
 
-</html>
+<div class="container">
+    <div class="form register-form">
+        <div class="note p-4 mt-5 text-center">
+            <h3>Register your team here</h3>
+        </div>
+        <br>
+        <div class="form-content">
+            <h5>Enter your team details</h5>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Team Name *" value="" name="teamname" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Enter your password *" value=""
+                            name="password1" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Confirm your password *" value=""
+                            name="password2" />
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <h5>Enter participants' details</h5>
+            <div class="row">
+                <div class="col-md-6">
+                    <h6>Participant 1</h6>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name of First Parcticipant *" value=""
+                            name="name1" />
+                    </div>
+                    <div class="form-group">
+                        Year
+                        <br>
+                        <input type="radio" value="1st" name="year1" /> 1st
+                        <br>
+                        <input type="radio" value="2nd" name="year1" /> 2nd
+                        <br>
+                        <input type="radio" value="3rd" name="year1" /> 3rd
+                        <br>
+                        <input type="radio" value="4th" name="year1" /> 4th
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <select name="dept1">
+                            <option value="" selected disabled>--department--</option>
+                            <option value="CSE">CSE</option>
+                            <option>ECE</option>
+                            <option>IT</option>
+                            <option>AEIE</option>
+                            <option>ME</option>
+                            <option>EE</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="number" class="form-control" placeholder="Phone Number *" value=""
+                            name="number1" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h6>Participant 2</h6>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name of First Parcticipant *" value=""
+                            name="name2" />
+                    </div>
+                    <div class="form-group">
+                        Year
+                        <br>
+                        <input type="radio" value="1st" name="year2" /> 1st
+                        <br>
+                        <input type="radio" value="2nd" name="year2" /> 2nd
+                        <br>
+                        <input type="radio" value="3rd" name="year2" /> 3rd
+                        <br>
+                        <input type="radio" value="4th" name="year2" /> 4th
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <select name="dept2">
+                            <option value="" selected disabled>--department--</option>
+                            <option value="CSE">CSE</option>
+                            <option>ECE</option>
+                            <option>IT</option>
+                            <option>AEIE</option>
+                            <option>ME</option>
+                            <option>EE</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="number" class="form-control" placeholder="Phone Number *" value=""
+                            name="number2" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+<div class="text-center">
+    <button type="button" class="btn btn-success btn-lg">Submit</button>
+</div>
+<br>
+
+{% endblock %}

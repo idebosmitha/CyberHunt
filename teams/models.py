@@ -6,8 +6,8 @@ class Team(models.Model):
     password = models.CharField(max_length=50)
 
     name1 = models.CharField(max_length=50)
-    year1 = models.IntegerField()
-    dept1 = models.CharField(max_length=10)
+    year1 = models.IntegerField()  #RADIO
+    dept1 = models.CharField(max_length=10)  #SELECT
     phone1 = models.BigIntegerField()
 
     name2 = models.CharField(max_length=50)
