@@ -7,7 +7,7 @@ from .models import Question, Submission, Image, File
 from teams.models import Team
 
 
-def question(request, question_id):
+def question(request, question_id):  # TODO: add request methods
     question = get_object_or_404(Question, id=question_id)
     all_questions = Question.objects.all()
 

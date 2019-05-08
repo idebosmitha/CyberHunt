@@ -18,9 +18,13 @@
             <br>
             <p>{{ question.body }}</p>
         </div>
-      </div>
-      <!-- /#page-content-wrapper -->
-  
+
+        {% include 'questions/images.html' %}
+
+        {% include 'questions/files.html' %}
+
+    </div>
+    <!-- /#page-content-wrapper -->  
 </div>
 
 {% endblock %}
