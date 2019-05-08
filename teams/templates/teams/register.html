@@ -12,21 +12,23 @@ Register
             <h3>Register your team here</h3>
         </div>
         <br>
-        <div class="form-content">
+        <form class="form-content" method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
             <h5>Enter your team details</h5>
             <br>
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Team Name *" value="" name="teamname" />
+                        <input type="text" class="form-control" placeholder="Team Name *" value="" name="teamname"
+                            required />
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Enter your password *" value=""
-                            name="password1" />
+                        <input type="password" class="form-control" placeholder="Enter your password *" value=""
+                            name="password1" required />
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Confirm your password *" value=""
-                            name="password2" />
+                        <input type="password" class="form-control" placeholder="Confirm your password *" value=""
+                            name="password2" required />
                     </div>
                 </div>
             </div>
@@ -36,82 +38,82 @@ Register
                 <div class="col-md-6">
                     <h6>Participant 1</h6>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Name of First Parcticipant *" value=""
-                            name="name1" />
+                        <input type="text" class="form-control" placeholder="Name of First Parcticipant" value=""
+                            name="name1" required />
                     </div>
                     <div class="form-group">
                         Year
                         <br>
-                        <input type="radio" value="1st" name="year1" /> 1st
+                        <input type="radio" value="1" name="year1" required /> 1st
                         <br>
-                        <input type="radio" value="2nd" name="year1" /> 2nd
+                        <input type="radio" value="2" name="year1" required /> 2nd
                         <br>
-                        <input type="radio" value="3rd" name="year1" /> 3rd
+                        <input type="radio" value="3" name="year1" required /> 3rd
                         <br>
-                        <input type="radio" value="4th" name="year1" /> 4th
+                        <input type="radio" value="4" name="year1" required /> 4th
                     </div>
                     <br>
                     <div class="form-group">
-                        <select name="dept1">
+                        <select name="dept1" required>
                             <option value="" selected disabled>--department--</option>
                             <option value="CSE">CSE</option>
-                            <option>ECE</option>
-                            <option>IT</option>
-                            <option>AEIE</option>
-                            <option>ME</option>
-                            <option>EE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="IT">IT</option>
+                            <option value="AEIE">AEIE</option>
+                            <option value="ME">ME</option>
+                            <option value="EE">EE</option>
                         </select>
                     </div>
                     <br>
                     <div class="form-group">
-                        <input type="number" class="form-control" placeholder="Phone Number *" value=""
-                            name="number1" />
+                        <input type="number" class="form-control" placeholder="Phone Number *" value="" name="phone1"
+                            required />
                     </div>
                 </div>
                 <div class="col-md-6">
                     <h6>Participant 2</h6>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Name of First Parcticipant *" value=""
-                            name="name2" />
+                            name="name2" required />
                     </div>
                     <div class="form-group">
                         Year
                         <br>
-                        <input type="radio" value="1st" name="year2" /> 1st
+                        <input type="radio" value="1" name="year2" required /> 1st
                         <br>
-                        <input type="radio" value="2nd" name="year2" /> 2nd
+                        <input type="radio" value="2" name="year2" required /> 2nd
                         <br>
-                        <input type="radio" value="3rd" name="year2" /> 3rd
+                        <input type="radio" value="3" name="year2" required /> 3rd
                         <br>
-                        <input type="radio" value="4th" name="year2" /> 4th
+                        <input type="radio" value="4" name="year2" required /> 4th
                     </div>
                     <br>
                     <div class="form-group">
-                        <select name="dept2">
+                        <select name="dept2" required>
                             <option value="" selected disabled>--department--</option>
                             <option value="CSE">CSE</option>
-                            <option>ECE</option>
-                            <option>IT</option>
-                            <option>AEIE</option>
-                            <option>ME</option>
-                            <option>EE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="IT">IT</option>
+                            <option value="AEIE">AEIE</option>
+                            <option value="ME">ME</option>
+                            <option value="EE">EE</option>
                         </select>
                     </div>
                     <br>
                     <div class="form-group">
-                        <input type="number" class="form-control" placeholder="Phone Number *" value=""
-                            name="number2" />
+                        <input type="number" class="form-control" placeholder="Phone Number *" value="" name="phone2"
+                            required />
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-success btn-lg">Register</button>
+            </div>
+            <div class="text-center mt-4">
+                Already regisered? <a href="{% url 'login' %}">Login</a>
+            </div>
+        </form>
     </div>
 </div>
-</div>
-<br>
-<div class="text-center">
-    <button type="button" class="btn btn-success btn-lg">Submit</button>
-</div>
-<br>
 
 {% endblock %}
