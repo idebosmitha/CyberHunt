@@ -1,8 +1,8 @@
 {% load staticfiles %}
 
 {% for file in files %}
-    <button class="btn btn-info">
-        {{ file.file.name }}
+    <button class="btn btn-info m-2">
+        {{ file.file.name }} &nbsp; <i class="fas fa-download"></i>
     </button>
 {% endfor %}
 
