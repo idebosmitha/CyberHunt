@@ -1,0 +1,9 @@
+{% load staticfiles %}
+
+{% for file in files %}
+    <button class="btn btn-info">
+        {{ file.file.name }}
+    </button>
+{% endfor %}
+
+<div style="clear: both;"></div>

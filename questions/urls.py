@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('<int:question_id>/', views.question, name='question'),
-    path('leaderboards/', views.leaderboards, name='leaderboards')
+    path('leaderboard/', views.leaderboard, name='leaderboard')
 ]

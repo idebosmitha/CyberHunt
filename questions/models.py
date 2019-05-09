@@ -9,19 +9,24 @@ class Question(models.Model):
     answer = models.CharField(max_length=100)
     points = models.IntegerField()
 
-
     def __str__(self):
         return f'{self.name} [{self.points}]'
 
 
 class File(models.Model):
-    question_id = models.ForeignKey(Question, on_delete=models.CASCADE, null=True)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, null=True)
     file = models.FileField(upload_to='files/')
+
+    def __str__(self):
+        return f'{self.question.name}: {self.file.name}'
 
 
 class Image(models.Model):
-    question_id = models.ForeignKey(Question, on_delete=models.CASCADE, null=True)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, null=True)
     image = models.FileField(upload_to='images/')
+
+    def __str__(self):
+        return f'{self.question.name}: {self.image.name}'
 
 
 class Submission(models.Model):

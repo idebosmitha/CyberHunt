@@ -3,28 +3,23 @@
 <!-- Sidebar -->
 <div class="bg-light border-right" id="sidebar-wrapper">
     <div class="sidebar-heading">
-        <h4>{{ teamname }} ({{ score }}) </h5>
+        <h4>{{ teamname }} ({{ score }}) </h4>
     </div>
     <div class="list-group list-group-flush">
         {% for question in all_questions %}
-        <a 
-            href="{% url 'question' question.id %}" 
-            class="list-group-item list-group-item-action bg-light">
+            <a href="{% url 'question' question.id %}"
+               class="list-group-item list-group-item-action bg-light">
 
-            <i class="fas fa-check-circle" style="color: green"></i>&nbsp;
-            {{ question.name }}
+                {% if question.id in questions_answered %}
+                    <i class="fas fa-check-circle" style="color: green"></i>&nbsp;
+                {% else %}
+                    <i class="fas fa-question-circle" style="color: blue"></i>&nbsp;
+                {% endif %}
+                {{ question.name }}
 
-            <div style="float: right;">{{ question.points }}</div>
-        </a>
+                <div class="float-right">{{ question.points }}</div>
+            </a>
         {% endfor %}
-        <a 
-            href="{% url 'question' 1" 
-            class="list-group-item list-group-item-action bg-light">
 
-            <i class="fas fa-question-circle" style="color: blue"></i>&nbsp;
-            Dummy
-
-            <div style="float: right;">10</div>
-        </a>
     </div>
 </div>
