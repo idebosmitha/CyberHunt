@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Leaderboard
+{% endblock %}
+
+
+{% block content %}
+
+    <ol>
+    {% for team in teams %}
+        {{ team.0 }}  {{ team.1 }}  {{ team.2 }}  {{ team.3 }}
+        <br>
+    {% endfor %}
+    </ol>
+
+{% endblock %}

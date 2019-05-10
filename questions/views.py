@@ -63,4 +63,16 @@ def question(request, question_id):
 
 
 def leaderboard(request):
-    pass
+    teams = Team.objects.all()
+    # [(teamname, participant1, participant2, score), (...), ...]
+    data = []
+    for team in teams:
+        submissions = Submission.objects.filter(team_id=team.id)
+        score = sum(map(lambda s: s.question.points, submissions))
+        data.append((team.teamname, team.name1, team.name2, score))
+
+    data.sort(key=lambda x: x[3], reverse=True)
+
+    return render(request, 'questions/leaderboard.html', {
+        'teams': data
+    })

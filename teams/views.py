@@ -68,4 +68,5 @@ def register(request):
 
 
 def logout(request):
-    pass
+    del request.session['team_id']
+    return redirect('leaderboard')
