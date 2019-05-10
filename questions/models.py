@@ -6,6 +6,7 @@ from teams.models import Team
 class Question(models.Model):
     name = models.CharField(max_length=50)
     body = models.TextField()
+    hint = models.CharField(max_length=100, default='')
     answer = models.CharField(max_length=100)
     points = models.IntegerField()
 

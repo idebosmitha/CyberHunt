@@ -5,6 +5,7 @@
     <div class="sidebar-heading">
         <h4>{{ teamname }} ({{ score }}) </h4>
     </div>
+
     <div class="list-group list-group-flush">
         {% for question in all_questions %}
             <a href="{% url 'question' question.id %}"

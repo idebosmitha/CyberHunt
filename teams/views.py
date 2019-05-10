@@ -19,7 +19,7 @@ def login(request):
                 team = Team.objects.get(teamname=teamname, password=password)
                 request.session['team_id'] = team.id
                 return redirect('/question/1')
-            except:
+            except Team.DoesNotExist:
                 return render(request, 'teams/login.html', {'error': 'Invalid credentials'})
         else:
             return render(request, 'teams/login.html', {'error': 'All fields are required'})

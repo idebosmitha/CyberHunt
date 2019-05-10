@@ -25,12 +25,19 @@
 
                 {% include 'questions/files.html' %}
 
-                <div class="input-group mb-3">
-                    <div class="m-2">
-                        <input type="text" class="form-control" placeholder="Enter your answer here" size="50">
+                {#                <div class="alert alert-primary" role="alert">#}
+                {#                    This is a primary alert—check it out!#}
+                {#                </div>#}
+
+                <form action="{% url 'question' this_question.id %}" method="post">
+                    {% csrf_token %}
+                    <div class="input-group mb-3">
+                        <div class="m-2">
+                            <input type="text" name="answer" class="form-control" placeholder="Enter your answer here" size="50">
+                        </div>
+                        <button class="btn btn-success btn-lg">Submit</button>
                     </div>
-                    <button class="btn btn-danger btn-lg">Submit</button>
-                </div>
+                </form>
             </div>
 
         </div>
